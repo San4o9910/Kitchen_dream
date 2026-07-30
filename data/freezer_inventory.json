@@ -1,0 +1,15 @@
+{
+  "freezer": {
+    "capacity": "unknown",
+    "items": [
+      {
+        "id": "FREEZER-001",
+        "name": "Example vacuum package",
+        "type": "semi_finished",
+        "quantity": 0,
+        "unit": "portion",
+        "status": "empty"
+      }
+    ]
+  }
+}
