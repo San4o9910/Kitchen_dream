@@ -1,4 +1,4 @@
-const PATCH_VERSION = '1.0.1';
+const PATCH_VERSION = '1.1.0';
 
 function repairModalInteractions(root = document) {
   root.querySelectorAll('.modal-sheet[onclick]').forEach((sheet) => {
