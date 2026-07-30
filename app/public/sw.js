@@ -1,4 +1,5 @@
-const CACHE = 'kitchen-dream-v1.0.1';
+const CACHE = 'kitchen-dream-v1.1.0';
+const IMAGE_CACHE = 'kitchen-dream-recipe-photos-v1';
 const BASE = '/Kitchen_dream/';
 const OFFLINE_PAGE = `${BASE}index.html`;
 const APP_SHELL = [
@@ -16,7 +17,9 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => Promise.all(
-      keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))
+      keys
+        .filter((key) => ![CACHE, IMAGE_CACHE].includes(key))
+        .map((key) => caches.delete(key))
     ))
   );
   self.clients.claim();
@@ -26,6 +29,28 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
+  const isRecipePhoto = event.request.destination === 'image' && (
+    url.hostname.endsWith('wikimedia.org') || url.hostname.endsWith('wikimedia.com')
+  );
+
+  if (isRecipePhoto) {
+    event.respondWith(
+      caches.open(IMAGE_CACHE).then(async (cache) => {
+        const cached = await cache.match(event.request);
+        const network = fetch(event.request)
+          .then((response) => {
+            if (response.ok || response.type === 'opaque') {
+              cache.put(event.request, response.clone());
+            }
+            return response;
+          })
+          .catch(() => cached);
+        return cached || network;
+      })
+    );
+    return;
+  }
+
   if (url.origin !== self.location.origin) return;
 
   if (event.request.mode === 'navigate') {
