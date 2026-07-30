@@ -1,10 +1,23 @@
 {
-  "month": "template",
+  "month": "Kitchen Dream Family Menu",
+  "mode": "batch_cooking",
   "days": [
     {
       "day": 1,
-      "lunch": "",
-      "dinner": "",
+      "lunch": "Куриный плов",
+      "dinner": "Тушеные куриные бедра с картофелем",
+      "freezer_items": ["Плововая основа", "Курица с овощами"]
+    },
+    {
+      "day": 2,
+      "lunch": "Куриный плов",
+      "dinner": "Тушеные куриные бедра с картофелем",
+      "freezer_items": []
+    },
+    {
+      "day": 3,
+      "lunch": "Куриный плов",
+      "dinner": "Тушеные куриные бедра с картофелем",
       "freezer_items": []
     }
   ]
