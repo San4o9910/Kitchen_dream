@@ -1,0 +1,34 @@
+{
+  "id": "/Kitchen_dream/",
+  "name": "Kitchen Dream",
+  "short_name": "Kitchen",
+  "description": "Меню, рецепты, заготовки и учет морозильника для семьи.",
+  "lang": "ru-RU",
+  "start_url": "/Kitchen_dream/",
+  "scope": "/Kitchen_dream/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5efe5",
+  "theme_color": "#f5efe5",
+  "categories": ["food", "lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Морозильник",
+      "short_name": "Морозильник",
+      "url": "/Kitchen_dream/?screen=freezer"
+    },
+    {
+      "name": "День заготовки",
+      "short_name": "Заготовка",
+      "url": "/Kitchen_dream/?screen=prep"
+    }
+  ]
+}
