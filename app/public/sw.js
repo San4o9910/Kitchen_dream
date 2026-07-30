@@ -1,9 +1,11 @@
-const CACHE = 'kitchen-dream-v1.0.0';
+const CACHE = 'kitchen-dream-v1.0.1';
+const BASE = '/Kitchen_dream/';
+const OFFLINE_PAGE = `${BASE}index.html`;
 const APP_SHELL = [
-  '/Kitchen_dream/',
-  '/Kitchen_dream/index.html',
-  '/Kitchen_dream/manifest.webmanifest',
-  '/Kitchen_dream/icon.svg'
+  BASE,
+  OFFLINE_PAGE,
+  `${BASE}manifest.webmanifest`,
+  `${BASE}icon.svg`
 ];
 
 self.addEventListener('install', (event) => {
@@ -13,28 +15,45 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
+    caches.keys().then((keys) => Promise.all(
+      keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))
+    ))
   );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const network = fetch(event.request)
-        .then((response) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' })
+        .then(async (response) => {
           if (response.ok) {
-            const copy = response.clone();
-            caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+            const cache = await caches.open(CACHE);
+            await cache.put(OFFLINE_PAGE, response.clone());
           }
           return response;
         })
-        .catch(() => cached || caches.match('/Kitchen_dream/index.html'));
-      return cached || network;
+        .catch(() => caches.match(OFFLINE_PAGE))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+
+      return fetch(event.request).then((response) => {
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+        }
+        return response;
+      });
     })
   );
 });
