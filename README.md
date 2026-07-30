@@ -1,27 +1,76 @@
-# 🍳 Kitchen Dream OS
+# 🍳 Kitchen Dream
 
-Family Kitchen Management System.
+**Kitchen Dream** — мобильное PWA-приложение для семьи из двух человек: месячное меню, рецепты, один день большой заготовки, вакуумные пакеты и учёт морозильника.
 
-## Vision
+## Что уже работает
 
-Kitchen Dream is a personal food operating system for families:
+- 🏠 Главный экран с сегодняшним обедом или ужином
+- ❄️ Учёт пакетов в морозильнике: списание, пополнение, фильтры и поиск
+- 📅 Меню на 30 дней: обеды и ужины без завтраков
+- 📖 20 карточек блюд с ингредиентами, рецептом и инструкцией по полуфабрикату
+- 🧩 Кулинарный конструктор по доступным запасам и времени готовки
+- 📦 Чек-лист одного большого дня заготовки
+- 🛒 Список покупок на месяц
+- 💾 Локальное сохранение всех отметок и остатков в браузере
+- 📱 Адаптивный интерфейс для телефона, планшета и компьютера
+- 📴 Service Worker и работа после загрузки без постоянного интернета
 
-**Shopping → Preparation Day → Vacuum Packs → Freezer → Meal Plan → Cooking → Cost Control**
+## Важное правило хранения
 
-## Core Modules
+Вакуумирование не заменяет холод. Сырые мясные, рыбные и фаршевые заготовки на месяц должны храниться в морозильнике. Холодильник используется для короткого хранения и безопасной разморозки пакета перед приготовлением.
 
-- 📅 Meal Planner
-- 📚 Recipe Library
-- ❄️ Freezer Inventory
-- 🧊 Semi-finished Product Manager
-- 🛒 Shopping List
-- 🔪 Preparation Day Workflow
-- 💰 Food Cost Tracking
+## Запуск локально
 
-## Product Goal
+```bash
+cd app
+npm install
+npm run dev
+```
 
-Create a simple family system where one preparation day creates an organized food supply for the whole month.
+Production-сборка:
 
-## Current Version
+```bash
+cd app
+npm install
+npm run build
+npm run preview
+```
 
-v0.1 — Architecture and data model stage
+## Публикация через GitHub Pages
+
+Workflow уже находится в `.github/workflows/deploy-pages.yml`.
+
+1. Откройте репозиторий на GitHub.
+2. Перейдите в **Settings → Pages**.
+3. В поле **Source** выберите **GitHub Actions**.
+4. Перейдите в **Actions → Deploy Kitchen Dream to GitHub Pages**.
+5. Нажмите **Run workflow → Run workflow**.
+6. После успешного завершения приложение будет доступно по адресу:
+
+`https://san4o9910.github.io/Kitchen_dream/`
+
+Все последующие изменения в ветке `main` будут публиковаться автоматически.
+
+## Установка на телефон
+
+### iPhone
+
+Откройте опубликованную ссылку в Safari → **Поделиться** → **На экран «Домой»**.
+
+### Android
+
+Откройте ссылку в Chrome → **Установить приложение** или **Добавить на главный экран**.
+
+## Технологии
+
+- Vite 8
+- Vanilla JavaScript modules
+- CSS без внешних UI-библиотек
+- LocalStorage
+- Web App Manifest
+- Service Worker
+- GitHub Actions + GitHub Pages
+
+## Версия
+
+**v1.0 — deploy-ready PWA MVP**
