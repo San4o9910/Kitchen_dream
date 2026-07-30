@@ -1,0 +1,25 @@
+{
+  "id": "recipe-meatballs",
+  "name": "Тефтели в томатном соусе",
+  "category": "meat",
+  "portions": 18,
+  "ingredients": [
+    {"name": "Смешанный фарш", "amount": "900 г"},
+    {"name": "Рис", "amount": "100 г"},
+    {"name": "Лук", "amount": "150 г"},
+    {"name": "Яйцо", "amount": "1 шт"}
+  ],
+  "semi_finished": {
+    "type": "vacuum_pack",
+    "output": "18 тефтелей",
+    "packs": "3 пакета"
+  },
+  "storage": {
+    "place": "freezer",
+    "recommended": true
+  },
+  "cooking": {
+    "time_minutes": 35,
+    "method": "tomato_sauce_stew"
+  }
+}
