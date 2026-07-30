@@ -1,10 +1,11 @@
 {
   "name": "kitchen-dream-pwa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "check": "node scripts/verify-ui.mjs && node --check src/main.js && node --check src/data.js && node --check src/ui-hotfix.js && node --check public/sw.js",
     "build": "vite build",
     "preview": "vite preview"
   },
