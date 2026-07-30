@@ -1,0 +1,11 @@
+{
+  "month": "template",
+  "days": [
+    {
+      "day": 1,
+      "lunch": "",
+      "dinner": "",
+      "freezer_items": []
+    }
+  ]
+}
