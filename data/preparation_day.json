@@ -1,0 +1,27 @@
+{
+  "preparation_day": {
+    "name": "Monthly batch preparation",
+    "steps": [
+      {
+        "time": "08:00",
+        "task": "Prepare ingredients"
+      },
+      {
+        "time": "09:00",
+        "task": "Prepare meat and vegetables"
+      },
+      {
+        "time": "11:00",
+        "task": "Create semi_finished products"
+      },
+      {
+        "time": "13:00",
+        "task": "Vacuum sealing and labeling"
+      },
+      {
+        "time": "14:00",
+        "task": "Add packages to freezer inventory"
+      }
+    ]
+  }
+}
