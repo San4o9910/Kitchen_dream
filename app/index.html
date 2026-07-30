@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#f5efe5" />
-    <meta name="description" content="Kitchen Dream — семейное PWA для меню, рецептов, заготовок и морозильника." />
+    <meta name="description" content="Kitchen Dream — семейное PWA с проверенными рецептами, заготовками и учётом морозильника." />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Kitchen Dream" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./icon.svg" />
+    <link rel="stylesheet" href="/src/recipe-upgrade.css" />
     <title>Kitchen Dream</title>
   </head>
   <body>
     <div id="app"></div>
     <noscript>Для работы Kitchen Dream необходимо включить JavaScript.</noscript>
+    <script type="module" src="/src/recipe-corrections.js"></script>
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/ui-hotfix.js"></script>
+    <script type="module" src="/src/recipe-upgrade.js"></script>
   </body>
 </html>
