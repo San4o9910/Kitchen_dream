@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "check": "node scripts/verify-ui.mjs && node scripts/verify-recipes.mjs && node --check src/main.js && node --check src/recipe-upgrade.js && node --check src/ui-hotfix.js && node --check public/sw.js",
+    "check": "node scripts/verify-ui.mjs && node scripts/verify-recipes.mjs && node --check src/main.js && node --check src/recipe-upgrade.js && node --check src/state-migration.js && node --check src/ui-hotfix.js && node --check public/sw.js",
     "build": "vite build",
     "preview": "vite preview"
   },
