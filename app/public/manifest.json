@@ -1,0 +1,10 @@
+{
+  "name": "Kitchen Dream OS",
+  "short_name": "Kitchen Dream",
+  "description": "Family meal planning and freezer management PWA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#7BC47F",
+  "icons": []
+}
