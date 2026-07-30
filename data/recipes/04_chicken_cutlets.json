@@ -1,0 +1,25 @@
+{
+  "id": "recipe-chicken-cutlets",
+  "name": "Куриные котлеты",
+  "category": "meat",
+  "portions": 24,
+  "ingredients": [
+    {"name": "Куриный фарш", "amount": "1800 г"},
+    {"name": "Лук", "amount": "300 г"},
+    {"name": "Яйца", "amount": "2 шт"},
+    {"name": "Овсяные хлопья", "amount": "200 г"}
+  ],
+  "semi_finished": {
+    "type": "vacuum_pack",
+    "output": "24 сырые котлеты",
+    "packs": "6 пакетов по 4 шт"
+  },
+  "storage": {
+    "place": "freezer",
+    "recommended": true
+  },
+  "cooking": {
+    "time_minutes": 25,
+    "method": "pan_with_lid"
+  }
+}
