@@ -1,14 +1,15 @@
 {
   "freezer": {
-    "capacity": "unknown",
+    "capacity": "family_freezer",
     "items": [
       {
-        "id": "FREEZER-001",
-        "name": "Example vacuum package",
-        "type": "semi_finished",
-        "quantity": 0,
-        "unit": "portion",
-        "status": "empty"
+        "id": "pack_001",
+        "name": "Куриные котлеты",
+        "quantity": "24 шт",
+        "type": "raw_semi_finished",
+        "status": "available",
+        "storage_location": "мясная полка",
+        "linked_recipe": "recipe_chicken_cutlets"
       }
     ]
   }
